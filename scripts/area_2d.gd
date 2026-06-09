@@ -4,13 +4,16 @@ extends Area2D
 
 @onready var control: Control = $Control
 
+@onready var panel_container: PanelContainer = $Control/PanelContainer
+
 @onready var label: Label = $Control/PanelContainer/MarginContainer/VBoxContainer/Label
 
 # Called when the coin enters the scene tree for the first time.
 func _ready() -> void:
-	pass #label.set_visible(false)
+	if panel_container:
+		panel_container.set_visible(false)
 
-@onready var panel_container: PanelContainer = $PanelContainer
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -18,7 +21,9 @@ func _process(_delta: float) -> void:
 
 #When a player touches a coin
 func _on_body_entered(_body: Node2D) -> void:
-	pass #panel_container.set_visible(true) 
+	panel_container.set_visible(true)
+	
+
 
 #If the question is accepted:
 func question_correct() -> void:

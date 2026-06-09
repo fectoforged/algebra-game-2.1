@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_ooskv"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_6ehh8"]
+[ext_resource type="Script" uid="uid://coxwcd3vfj3rq" path="res://scenes/Coins:Questions/AnsA.gd" id="3_ioe3i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -44,31 +45,32 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1558578416]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "Solve: 3x-7x+10x-3=4+3x-17+21"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1788131623]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1495864614]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) x = 11/3"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1463734069]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) x = -11/3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=957333311]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1334278539]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) x = 3/11"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=722255659]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) x = -3/11"
+
+[node name="Node" type="Node" parent="." unique_id=499163418]
+script = ExtResource("3_ioe3i")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

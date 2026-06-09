@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_rmqly"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_x4o2d"]
+[ext_resource type="Script" uid="uid://coxwcd3vfj3rq" path="res://scenes/Coins:Questions/AnsA.gd" id="3_uv4gh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -16,13 +17,15 @@ texture = ExtResource("2_x4o2d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1853894076]
 shape = SubResource("CircleShape2D_v7riw")
 
-[node name="Control" type="Control" parent="CollisionShape2D" unique_id=319093029]
+[node name="Control" type="Control" parent="." unique_id=319093029]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -130.0
+offset_top = -33.0
+offset_right = 170.0
+offset_bottom = 117.0
 
-[node name="PanelContainer" type="PanelContainer" parent="CollisionShape2D/Control" unique_id=961957837]
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=961957837]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -34,41 +37,42 @@ offset_top = -100.0
 offset_right = 150.0
 offset_bottom = 50.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CollisionShape2D/Control/PanelContainer" unique_id=225857824]
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=225857824]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CollisionShape2D/Control/PanelContainer/MarginContainer" unique_id=368056481]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer" unique_id=368056481]
 clip_contents = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1575896524]
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1575896524]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "If f(x)=7x-12, solve for f(3)."
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=507507680]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=507507680]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=166861200]
+[node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=166861200]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) f(3) = 9"
 
-[node name="Button2" type="Button" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=239283478]
+[node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=239283478]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) f(3) = -2"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1170700230]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1170700230]
 layout_mode = 2
 
-[node name="Button3" type="Button" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2071337674]
+[node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2071337674]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) f(3) = 19"
 
-[node name="Button4" type="Button" parent="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=482164598]
+[node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=482164598]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) f(3) = 2"
+
+[node name="Node" type="Node" parent="." unique_id=1111592732]
+script = ExtResource("3_uv4gh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="pressed" from="CollisionShape2D/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="CollisionShape2D/Control" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

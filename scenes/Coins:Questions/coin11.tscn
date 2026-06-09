@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_ixqk2"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_uqqsf"]
+[ext_resource type="Script" uid="uid://b8xv2jc3g4dl2" path="res://scenes/Coins:Questions/AnsC.gd" id="3_kvbsy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -44,31 +45,34 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1970656001]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "What is the equation of a line parallel
+to y=3x+8 that passes through the
+ point (0,8)?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1924943245]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=196310322]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) y = -1/3x + 8"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1988229562]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) y = 1/3x + 8"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=258739074]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=768814946]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) y = 3x + 8"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1008183199]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) y = 3x + 6"
+
+[node name="Node" type="Node" parent="." unique_id=144728954]
+script = ExtResource("3_kvbsy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

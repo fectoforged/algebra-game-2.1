@@ -17,7 +17,7 @@ extends Node
 
 
 func _on_button_pressed() -> void:
-	pass #panel_container.set_visible(false)
+	panel_container.set_visible(false)
 
 
 func _on_button_2_pressed() -> void:
@@ -25,7 +25,7 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_button_3_pressed() -> void:
-	pass #panel_container.set_visible(false)
+	panel_container.set_visible(false)
 
 func _on_button_4_pressed() -> void:
-	pass #panel_container.set_visible(false)
+	panel_container.set_visible(false)

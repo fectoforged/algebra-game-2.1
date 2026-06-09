@@ -1,6 +1,6 @@
 extends Node
 
-@onready var panel_container: PanelContainer = $Control/PanelContainer
+@onready var panel_container: PanelContainer = $"../Control/PanelContainer"
 
 @onready var button: Button = $"../Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Button"
 
@@ -15,14 +15,15 @@ extends Node
 @onready var coin: Area2D = $".."
 
 
+
 func _on_button_pressed() -> void:
 	panel_container.set_visible(false)
 
 func _on_button_2_pressed() -> void:
 	panel_container.set_visible(false)
-	
+
 func _on_button_3_pressed() -> void:
-	coin.question_correct()
-	
-func _on_button_4_pressed() -> void:
 	panel_container.set_visible(false)
+
+func _on_button_4_pressed() -> void:
+	coin.question_correct()

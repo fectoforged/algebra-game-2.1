@@ -15,14 +15,15 @@ extends Node
 @onready var coin: Area2D = $".."
 
 
+
 func _on_button_pressed() -> void:
 	panel_container.set_visible(false)
 
 func _on_button_2_pressed() -> void:
 	panel_container.set_visible(false)
-	
+
 func _on_button_3_pressed() -> void:
-	coin.question_correct()
-	
+	coin.add_point()
+
 func _on_button_4_pressed() -> void:
 	panel_container.set_visible(false)

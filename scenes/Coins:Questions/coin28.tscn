@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_tjgf0"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_ba2aq"]
+[ext_resource type="Script" uid="uid://coxwcd3vfj3rq" path="res://scenes/Coins:Questions/AnsA.gd" id="3_kjfyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -19,8 +20,10 @@ shape = SubResource("CircleShape2D_v7riw")
 [node name="Control" type="Control" parent="." unique_id=94119360]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -144.0
+offset_top = -44.0
+offset_right = 156.0
+offset_bottom = 106.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1664359773]
 layout_mode = 1
@@ -44,31 +47,33 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=777359177]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "In the function f(x)=3x-21, find the
+value for f(8)."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=397415013]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1378879629]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) f(8) = 3"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1597486148]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) f(8) = 4"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=509705436]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=772314313]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) f(8) = 2"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=350182966]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) f(8) = 1"
+
+[node name="Node" type="Node" parent="." unique_id=779628598]
+script = ExtResource("3_kjfyl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

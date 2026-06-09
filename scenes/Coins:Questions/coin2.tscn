@@ -21,11 +21,12 @@ shape = SubResource("CircleShape2D_v7riw")
 script = ExtResource("3_kndjt")
 
 [node name="Control" type="Control" parent="." unique_id=1870909086]
-visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -135.0
+offset_top = -61.0
+offset_right = 165.0
+offset_bottom = 89.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=907586369]
 layout_mode = 1

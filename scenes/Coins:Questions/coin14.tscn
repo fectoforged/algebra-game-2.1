@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_23fyi"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_i7due"]
+[ext_resource type="Script" uid="uid://dm1wn177ki6ba" path="res://scenes/Coins:Questions/AnsD.gd" id="3_wuw87"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -19,8 +20,10 @@ shape = SubResource("CircleShape2D_v7riw")
 [node name="Control" type="Control" parent="." unique_id=53373822]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -150.0
+offset_top = -47.0
+offset_right = 150.0
+offset_bottom = 103.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1243326095]
 layout_mode = 1
@@ -44,31 +47,32 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1804958153]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "Solve: 4(2x - 9) < 50."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=185840473]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1056286230]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) x < 19"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=886517948]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) x > 10"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=947986978]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1215238807]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) x > 11.75"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2024034141]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) x < 10.75"
+
+[node name="Node" type="Node" parent="." unique_id=1188310020]
+script = ExtResource("3_wuw87")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_khgjw"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_npdmt"]
+[ext_resource type="Script" uid="uid://b8xv2jc3g4dl2" path="res://scenes/Coins:Questions/AnsC.gd" id="3_nwvfy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -19,8 +20,10 @@ shape = SubResource("CircleShape2D_v7riw")
 [node name="Control" type="Control" parent="." unique_id=1233250521]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -136.0
+offset_top = -42.0
+offset_right = 164.0
+offset_bottom = 108.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=400856440]
 layout_mode = 1
@@ -44,31 +47,37 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=310975775]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "Tina is writing a story. She needs to
+have at least 75 pages for it to be
+published, and each page needs to
+have 150 words. She has written 73
+words so far. How many more words
+does she need to write?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=906427143]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=440653253]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) 11,111 words"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1686874520]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) 11,100 words"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=508910720]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1146615062]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) 11,177 words"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1669814403]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) 11,102 words"
+
+[node name="Node" type="Node" parent="." unique_id=930109086]
+script = ExtResource("3_nwvfy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

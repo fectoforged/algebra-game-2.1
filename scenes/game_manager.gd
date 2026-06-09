@@ -7,3 +7,8 @@ var score = 0
 func add_point():
 	score += 1
 	score_label.text = "You've collected " + str(score) + " of 30 coins so far!"
+
+
+func _win():
+	if score == 30:
+		print("You win!")

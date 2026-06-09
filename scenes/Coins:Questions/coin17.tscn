@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_b1rbd"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_ik5pt"]
+[ext_resource type="Script" uid="uid://coxwcd3vfj3rq" path="res://scenes/Coins:Questions/AnsA.gd" id="3_g8o5g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -19,8 +20,10 @@ shape = SubResource("CircleShape2D_v7riw")
 [node name="Control" type="Control" parent="." unique_id=1148820420]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -156.0
+offset_top = -34.0
+offset_right = 144.0
+offset_bottom = 116.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1326863279]
 layout_mode = 1
@@ -44,31 +47,40 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1229725003]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "Jack is a sandwich maker. He is
+packing an order for a customer. The
+package cannot be heavier than 10.5
+pounds, and the disposable utensils
+and the bonus gift already weigh 2.9
+pounds, and each sandwich is 0.7
+pounds. What is the maximum
+amount of sandwiches he can pack
+for the customer?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=166149514]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=609775242]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) 11 sandwiches"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1701186395]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) 10 sandwiches"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=765336170]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=965526027]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) 12 sandwiches"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1968464861]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) 9 sandwiches"
+
+[node name="Node" type="Node" parent="." unique_id=1505935218]
+script = ExtResource("3_g8o5g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]

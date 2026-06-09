@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4gcx6eixxv88" path="res://scripts/area_2d.gd" id="1_ei3j2"]
 [ext_resource type="Texture2D" uid="uid://b6wms5tt47ub5" path="res://assets/New Piskel-1 copy.png" id="2_tvsor"]
+[ext_resource type="Script" uid="uid://b8xv2jc3g4dl2" path="res://scenes/Coins:Questions/AnsC.gd" id="3_4fu62"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v7riw"]
 radius = 8.0
@@ -19,8 +20,10 @@ shape = SubResource("CircleShape2D_v7riw")
 [node name="Control" type="Control" parent="." unique_id=9977222]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -140.0
+offset_top = -44.0
+offset_right = 160.0
+offset_bottom = 106.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=198931623]
 layout_mode = 1
@@ -44,31 +47,40 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1257794200]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Olivia’s age is five more than twice
-John’s age. The sum of their ages is 26.
-How old is John? "
+text = "Hayley is playing a video game
+called “The Adventures of Shroomu”.
+She is answering questions to collect
+coins. She already has 9 coins, and
+collects them at a rate of 2 per
+minute. Hayley needs at least 30 coins
+to finish the game. What is the least
+amount of full minutes it will take her
+to complete the video game? "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1424947417]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1398722465]
 layout_mode = 2
-text = "A) 6 years old"
+text = "A) 9 minutes"
 
 [node name="Button2" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=845251367]
 layout_mode = 2
-text = "B) 19 years old"
+text = "B) 10 minutes"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1725546402]
 layout_mode = 2
 
 [node name="Button3" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1934816590]
 layout_mode = 2
-text = "C) 7 years old"
+text = "C) 11 minutes"
 
 [node name="Button4" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1931362254]
 layout_mode = 2
-text = "D) 21 years old"
+text = "D) 12 minutes"
+
+[node name="Node" type="Node" parent="." unique_id=1250042354]
+script = ExtResource("3_4fu62")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button3" to="Control" method="_on_button_3_pressed"]
