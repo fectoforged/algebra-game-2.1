@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5nl4wdj3i7bt"]
 
-[ext_resource type="Script" uid="uid://c630srpjxur88" path="res://scenes/shroomi.gd" id="1_03sv8"]
+[ext_resource type="Script" uid="uid://c630srpjxur88" path="res://scripts/shroomi.gd" id="1_03sv8"]
 [ext_resource type="Texture2D" uid="uid://d1qogce2qnvi7" path="res://assets/shroomy (1).png" id="1_pg26e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03sv8"]
@@ -10,6 +10,22 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wltuq"]
 atlas = ExtResource("1_pg26e")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd5hu"]
+atlas = ExtResource("1_pg26e")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at34d"]
+atlas = ExtResource("1_pg26e")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj8jl"]
+atlas = ExtResource("1_pg26e")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8b7m0"]
+atlas = ExtResource("1_pg26e")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_at34d"]
 animations = [{
@@ -22,6 +38,28 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd5hu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at34d")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj8jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8b7m0")
+}],
+"loop": true,
+"name": &"run",
 "speed": 2.0
 }]
 
@@ -37,8 +75,9 @@ script = ExtResource("1_03sv8")
 position = Vector2(36.625008, 37.25)
 scale = Vector2(2.335937, 2.359375)
 sprite_frames = SubResource("SpriteFrames_at34d")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
+frame_progress = 0.19501139
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1876778059]
 position = Vector2(34, 39)
